@@ -10,15 +10,15 @@ const ReserveCard = ({ reserve, setReserveSelected }) => {
             ...reserve,
             days,
             price,
-            
+
         }
         setReserveSelected(obj);
     }
 
-    const handleDeleteBooking = () =>  {
+    const handleDeleteBooking = () => {
         const url = `https://hotels-api.academlo.tech/reviews/${reserve.id}`
-        
-        deleteBooking(url,reserve.id)
+
+        deleteBooking(url, reserve.id)
 
     }
     return (
@@ -26,7 +26,7 @@ const ReserveCard = ({ reserve, setReserveSelected }) => {
 
             <header className='w-full  max-w-[10rem] overflow-hidden rounded-l-xl'>
 
-                <img src= {reserve.hotel.images[0].url} alt="" />
+                <img src={reserve.hotel.images[0].url} alt="" />
 
             </header>
 
@@ -36,15 +36,15 @@ const ReserveCard = ({ reserve, setReserveSelected }) => {
 
                 <div className=' font-medium'>{reserve.hotel.city.name}, {reserve.hotel.city.country}</div>
 
-                <div onClick={ handleReview} className=' text-blue-600'>Rate and comment this visit...</div>
+                <div onClick={handleReview} className=' text-blue-600 cursor-pointer'>Rate and comment this visit...</div>
 
             </section>
 
             <section>
 
-                <ul className=' flex flex-col justify-center items-center [&>li]:flex [&>li]:space-x-4'>
+                <ul className=' flex flex-col justify-start items-start w-[15vw] [&>li]:w-full [&>li]:flex  [&>li]:justify-between [&>li]:items-center [&>li]:space-x-4'>
 
-                    <li><span>Reservation Days</span><span>{days}</span></li>
+                    <li><span>Reservation Days</span><span className=' w-[5vw] text-center'>{days}</span></li>
 
                     <li><span>subtotal Price</span><span>{price} USD</span></li>
 
@@ -54,7 +54,7 @@ const ReserveCard = ({ reserve, setReserveSelected }) => {
 
             <footer>
 
-                <button onClick={handleDeleteBooking}>
+                <button className=' w-[2em] h-[2em] rounded-xl flex justify-center items-center text-white text-xl bg-[#CF524F] mr-2' onClick={handleDeleteBooking}>
 
                     <i className='bx bx-trash'></i>
 
