@@ -23,16 +23,19 @@ const useCrud = () => {
     //update
     const updateApi = (url, data, id) => {
         axios.put(url, data, getConfigToken())
-            .then(res => setResponse(response.map(e => e.id === id ? res.data : e)))
+            .then(res => {setResponse(response.map(e => e.id === id ? res.data : e))})
             .catch(err => console.log(err))
 
     }
     //delete
     const deleteApi = (url, id) => {
         axios.delete(url, getConfigToken())
-            .then(res => setResponse(response.filter(e => e.id !== id)))
+            .then(res =>{ 
+                console.log(res.data)
+                setResponse( response.filter(e => e.id !== id))}
+        )
             .catch(err => console.log(err))
-    }
+}
     return [response, getApi, postApi, updateApi, deleteApi]
 
 }

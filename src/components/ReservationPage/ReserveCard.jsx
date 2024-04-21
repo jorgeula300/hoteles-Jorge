@@ -1,6 +1,7 @@
 import React from 'react'
+import useCrud from '../../hooks/useCrud';
 
-const ReserveCard = ({ reserve, setReserveSelected }) => {
+const ReserveCard = ({ reserve, setReserveSelected, deleteBooking }) => {
     const checkIn = new Date(reserve.checkIn);
     const checkOut = new Date(reserve.checkOut);
     const days = (checkOut - checkIn) / (1000 * 60 * 60 * 24);
@@ -15,10 +16,12 @@ const ReserveCard = ({ reserve, setReserveSelected }) => {
         setReserveSelected(obj);
     }
 
+
     const handleDeleteBooking = () => {
         const url = `https://hotels-api.academlo.tech/reviews/${reserve.id}`
 
         deleteBooking(url, reserve.id)
+
 
     }
     return (

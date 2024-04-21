@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const SlaiderImgs = ({ hotels }) => {
     const [imgSelected, setImgSelected] = useState(0)
-    console.log(imgSelected)
+
     const objStyle = {
         width: `${hotels?.images.length * 100}%`,
         transform: `translateX(calc(-${imgSelected}/${hotels?.images.length}))`
