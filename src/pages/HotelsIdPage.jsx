@@ -21,10 +21,10 @@ const HotelsIdPage = () => {
   console.log(hotels)
 
   return (
-    <div className=" w-full max-w-[1200px] mx-auto py-20">
+    <div className=" w-full max-w-[1200px] mx-auto px-4 py-20">
       <h2 className=" text-center font-bold text-3xl">{hotels?.name}</h2>
       <h3 className=" text-center font-medium text-xl">RATING-{hotels?.rating}</h3>
-      <div className=" flex justify-center items-center space-x-4">
+      <div className=" flex  md:flex-row flex-col justify-center items-center space-x-4">
         <SlaiderImgs hotels={hotels} />
 
         <div className="w-full max-w-[600px]">
@@ -41,7 +41,7 @@ const HotelsIdPage = () => {
           }
         </div>
       </div>
-      <section>
+      <section className="">
         <h3 className=" text-lg font-semibold">{hotels?.city.name}, {hotels?.city.country}</h3>
         <p className=" flex items-center gap-2 mb-5 " >
           <i className='bx bx-map'></i>

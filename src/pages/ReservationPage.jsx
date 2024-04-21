@@ -5,7 +5,7 @@ import ReserveCard from '../components/ReservationPage/ReserveCard'
 import FormReviews from '../components/ReservationPage/FormReviews'
 
 const ReservationPage = () => {
-    const [bookings, getBokings,,,deleteBooking] = useCrud()
+    const [bookings, getBokings, , , deleteBooking] = useCrud()
     const [reserveSelected, setReserveSelected] = useState()
 
     useEffect(() => {
@@ -15,9 +15,11 @@ const ReservationPage = () => {
         , []
     )
     return (
-        <section>
-            <FormReviews reserveSelected={reserveSelected} setReserveSelected={setReserveSelected} />
-            <h2>Reservation</h2>
+        <section className=' pt-[4.5rem]'>
+            {
+                reserveSelected ? <FormReviews reserveSelected={reserveSelected} setReserveSelected={setReserveSelected} /> : null
+            }
+            <h2 className=' text-xl font-bold'>Reservation</h2>
             {
                 bookings?.map(reserve => (
                     <ReserveCard key={reserve.id} reserve={reserve} setReserveSelected={setReserveSelected} deleteBooking={deleteBooking} />
