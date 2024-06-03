@@ -8,6 +8,14 @@ const HotelCard = ({ hotel }) => {
     const handleClick = () => {
         navigate(`/hotels/${hotel.id}`)
     }
+
+    const data = hotel?.reviews.map(element => {
+        let sum = 0
+        sum += element.rating
+        return sum / hotel.reviews.length
+    })
+
+
     return (
         <article className=" rounded-xl w-[211px] border shadow">
             <header className=" rounded-t-xl overflow-hidden ">
@@ -19,7 +27,7 @@ const HotelCard = ({ hotel }) => {
                 </div>
 
                 <div className=" h-[60px] flex flex-col justify-center ">
-                    <p>{hotel.rating}</p>
+                    <p> Rating: {data}</p>
                     <span className=" text-xs font-medium ">{hotel.city.name}, {hotel.city.country}</span>
                     <span className=" text-xs font-semibold">$ {hotel.price}</span>
 

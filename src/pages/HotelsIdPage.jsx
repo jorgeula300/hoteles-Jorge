@@ -19,11 +19,20 @@ const HotelsIdPage = () => {
     getHotels(url)
   }, [id])
 
+  const data = hotels?.reviews.map(element => {
+    let sum = 0
+    sum += element.rating
+    return sum / hotels.reviews.length
+  })
+
+
+
 
   return (
     <div className=" w-full max-w-[1200px] mx-auto px-4 py-20">
       <h2 className=" text-center font-bold text-3xl">{hotels?.result.name}</h2>
-      <h3 className=" text-center font-medium text-xl">RATING-{hotels?.result.rating}</h3>
+      <h3 className=" text-center font-medium text-xl">RATING- {data}</h3>
+
       <div className=" flex  md:flex-row flex-col justify-center items-center space-x-4">
         <SlaiderImgs hotels={hotels} />
 
