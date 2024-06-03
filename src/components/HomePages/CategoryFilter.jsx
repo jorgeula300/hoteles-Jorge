@@ -5,7 +5,7 @@ import { getHotelsThunk } from '../../store/state/hotels.slice'
 
 
 const CategoryFilter = () => {
-    const url = 'https://hotels-api.academlo.tech/cities'
+    const url = 'https://hotels-back-jorge.onrender.com/cities'
 
     const dispatch = useDispatch()
     const [cities, getCities] = useFetch()
@@ -16,9 +16,9 @@ const CategoryFilter = () => {
     const handleFilterCity = (id) => {
         let url
         if (id) {
-            url = `https://hotels-api.academlo.tech/hotels?cityId=${id}`
+            url = `https://hotels-back-jorge.onrender.com/hotels?cityId=${id}`
         } else {
-            url = 'https://hotels-api.academlo.tech/hotels'
+            url = 'https://hotels-back-jorge.onrender.com/hotels'
         }
         dispatch(getHotelsThunk(url))
 

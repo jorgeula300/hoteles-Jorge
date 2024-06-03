@@ -54,7 +54,7 @@ const HomePage = () => {
           <i onClick={handleCloseFilter} className='bx bx-filter text-4xl font-bold cursor-pointer md:hidden' ></i>
         </div>
 
-        <div className=" grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto justify-items-center max-w-[890px] gap-3 my-5">
+        <div className=" grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mx-auto justify-items-center w-full max-w-[890px] gap-3 my-5">
           {
             hotels?.filter(cbfilter).map(hotel => (
               <HotelCard key={hotel.id} hotel={hotel} />

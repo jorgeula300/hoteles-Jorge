@@ -17,7 +17,7 @@ function App() {
 
   const dispatch = useDispatch()
   useEffect(() => {
-    const url = 'https://hotels-api.academlo.tech/hotels'
+    const url = 'https://hotels-back-jorge.onrender.com/hotels'
     dispatch(getHotelsThunk(url))
   }
     , []
@@ -26,14 +26,14 @@ function App() {
 
   return (
     <div>
-    <PrincipalHeader/>
+      <PrincipalHeader />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/hotels/:id" element={<HotelsIdPage />} />
         <Route path="/registrer" element={<RegistrerPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route element = {<ProtecterRouter/>} >
-        <Route path="/reservations" element={<ReservationPage/>}/>
+        <Route element={<ProtecterRouter />} >
+          <Route path="/reservations" element={<ReservationPage />} />
         </Route>
       </Routes>
     </div>

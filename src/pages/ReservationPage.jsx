@@ -9,11 +9,14 @@ const ReservationPage = () => {
     const [reserveSelected, setReserveSelected] = useState()
 
     useEffect(() => {
-        const url = 'https://hotels-api.academlo.tech/bookings'
+        const url = 'https://hotels-back-jorge.onrender.com/bookings'
         getBokings(url)
     }
         , []
     )
+
+
+    console.log(reserveSelected)
     return (
         <section className=' pt-[4.5rem]'>
             {

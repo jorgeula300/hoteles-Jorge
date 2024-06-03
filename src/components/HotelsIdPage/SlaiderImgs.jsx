@@ -4,8 +4,8 @@ const SlaiderImgs = ({ hotels }) => {
     const [imgSelected, setImgSelected] = useState(0)
 
     const objStyle = {
-        width: `${hotels?.images.length * 100}%`,
-        transform: `translateX(calc(-${imgSelected}/${hotels?.images.length}))`
+        width: `${hotels?.result.images.length * 100}%`,
+        transform: `translateX(calc(-${imgSelected}/${hotels?.result.images.length}))`
 
     }
     const handleLeft = () => {
@@ -14,7 +14,7 @@ const SlaiderImgs = ({ hotels }) => {
         }
     }
     const handleRight = () => {
-        if (imgSelected < hotels?.images.length - 1) {
+        if (imgSelected < hotels?.result.images.length - 1) {
             setImgSelected(imgSelected + 1)
         }
     }
@@ -26,7 +26,7 @@ const SlaiderImgs = ({ hotels }) => {
             </div>
             <div style={objStyle} className="slider-movable flex ">
                 {
-                    hotels?.images.map(imgInfo => (
+                    hotels?.result.images.map(imgInfo => (
                         <div key={imgInfo.id} className="slider__img-container w-full p-[2em]  aspect-[1.5]">
                             <img key={imgInfo.id} className=' w-full h-full object-contain' src={imgInfo.url} alt="" />
                         </div>

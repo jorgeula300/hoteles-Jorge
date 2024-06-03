@@ -7,7 +7,7 @@ const FormReviews = ({ reserveSelected, setReserveSelected }) => {
     const [, , createReview] = useCrud()
 
     const submit = data => {
-        const url = 'https://hotels-api.academlo.tech/reviews'
+        const url = 'https://hotels-back-jorge.onrender.com/reviews'
         data.hotelId = reserveSelected?.hotel.id
         data.rating = Number(data.rating)
         createReview(url, data)
@@ -27,7 +27,7 @@ const FormReviews = ({ reserveSelected, setReserveSelected }) => {
             <div className=' w-full max-w-[308px] overflow-hidden bg-white  pb-3 flex flex-col justify-center items-center rounded-xl'>
                 <section className=' space-y-3'>
                     <header className='w-full relative'>
-                        <img src={reserveSelected?.hotel.images[0].url} alt="ImgH" />
+                        <img className='w-full max-w-[211px] h-[200px]' src={reserveSelected?.hotel.images[0].url} alt="ImgH" />
                         <div onClick={handleClose} className=' bg-white w-[20px] h-[20px] rounded-full absolute top-2 right-2 flex justify-center items-center'>
                             <i className='bx bxs-x-circle text-[#CF524F] text-[20px]'></i>
                         </div>

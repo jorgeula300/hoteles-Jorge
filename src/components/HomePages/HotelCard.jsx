@@ -9,16 +9,16 @@ const HotelCard = ({ hotel }) => {
         navigate(`/hotels/${hotel.id}`)
     }
     return (
-        <article className=" rounded-xl w-full max-w-[15em] border shadow">
+        <article className=" rounded-xl w-[211px] border shadow">
             <header className=" rounded-t-xl overflow-hidden ">
-                <img className="min-h-[11em]" src={hotel.images[0].url} alt={hotel.name} />
+                <img className="max-h-[11em] w-full max-w-[211px]" src={hotel.images[0].url} alt={hotel.name} />
             </header>
             <section className="flex flex-col justify-center mt-4 mx-3 mb-3 space-y-2">
                 <div className=" h-[50px]">
                     <h3 className=" text-sm font-bold">{hotel.name}</h3>
                 </div>
 
-                <div className=" h-[60px] flex flex-col justify-center "> 
+                <div className=" h-[60px] flex flex-col justify-center ">
                     <p>{hotel.rating}</p>
                     <span className=" text-xs font-medium ">{hotel.city.name}, {hotel.city.country}</span>
                     <span className=" text-xs font-semibold">$ {hotel.price}</span>
