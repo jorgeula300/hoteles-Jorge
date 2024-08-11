@@ -9,7 +9,7 @@ const ReservationPage = () => {
     const [reserveSelected, setReserveSelected] = useState()
 
     useEffect(() => {
-        const url = 'https://hotels-back-jorge.onrender.com/bookings'
+        const url = 'https://hotelsback-production.up.railway.app/bookings'
         getBokings(url)
     }
         , []

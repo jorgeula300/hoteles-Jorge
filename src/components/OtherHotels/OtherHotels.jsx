@@ -4,7 +4,7 @@ import HotelCard from '../HomePages/HotelCard'
 import './css/ScrollBarra.css'
 
 function OtherHotels({ hotels }) {
-    const url = `https://hotels-back-jorge.onrender.com/hotels/?cityId=${hotels?.result.cityId}`
+    const url = `https://hotelsback-production.up.railway.app/hotels/?cityId=${hotels?.result.cityId}`
     const [hotelsInCity, getHotelsInCity] = useFetch()
     useEffect(() => {
         if (hotels) {

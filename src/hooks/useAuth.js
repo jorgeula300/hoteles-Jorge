@@ -6,7 +6,7 @@ const useAuth = () => {
     const navigate = useNavigate()
 
     const registerUser = (data) => {
-        const url = "https://hotels-back-jorge.onrender.com/users"
+        const url = "https://hotelsback-production.up.railway.app/users"
         
 
         axios.post(url, data).then(res => {
@@ -19,7 +19,7 @@ const useAuth = () => {
     }
 
     const loginUser = (data) => {
-        const url = "https://hotels-back-jorge.onrender.com/users/login"
+        const url = "https://hotelsback-production.up.railway.app/users/login"
         axios.post(url, data).then(res => {
             localStorage.setItem("token", res.data.token)
             localStorage.setItem("user", JSON.stringify(res.data.user))

@@ -7,7 +7,7 @@ const FormReviews = ({ reserveSelected, setReserveSelected }) => {
     const [, , createReview] = useCrud()
 
     const submit = data => {
-        const url = 'https://hotels-back-jorge.onrender.com/reviews'
+        const url = 'https://hotelsback-production.up.railway.app/reviews'
         data.hotelId = reserveSelected?.hotel.id
         data.rating = Number(data.rating)
         createReview(url, data)

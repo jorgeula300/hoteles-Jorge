@@ -12,7 +12,7 @@ const HotelsIdPage = () => {
   const { id } = useParams()
 
 
-  const url = `https://hotels-back-jorge.onrender.com/hotels/${id}`
+  const url = `https://hotelsback-production.up.railway.app/hotels/${id}`
   const [hotels, getHotels] = useFetch()
 
   useEffect(() => {

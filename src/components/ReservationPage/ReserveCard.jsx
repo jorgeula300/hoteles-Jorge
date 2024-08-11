@@ -18,7 +18,7 @@ const ReserveCard = ({ reserve, setReserveSelected, deleteBooking }) => {
 
 
     const handleDeleteBooking = () => {
-        const url = `https://hotels-back-jorge.onrender.com/bookings/${reserve.id}`
+        const url = `https://hotelsback-production.up.railway.app/bookings/${reserve.id}`
 
         deleteBooking(url, reserve.id)
 

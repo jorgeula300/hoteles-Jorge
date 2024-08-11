@@ -17,7 +17,7 @@ function App() {
 
   const dispatch = useDispatch()
   useEffect(() => {
-    const url = 'https://hotels-back-jorge.onrender.com/hotels'
+    const url = 'https://hotelsback-production.up.railway.app/hotels'
     dispatch(getHotelsThunk(url))
   }
     , []
